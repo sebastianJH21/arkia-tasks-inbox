@@ -1,0 +1,20 @@
+[
+  {
+    "field": "status",
+    "label": "Estado",
+    "options": [
+      "Pendiente",
+      "En progreso",
+      "Completada"
+    ]
+  },
+  {
+    "field": "priority",
+    "label": "Prioridad",
+    "options": [
+      "Alta",
+      "Media",
+      "Baja"
+    ]
+  }
+]

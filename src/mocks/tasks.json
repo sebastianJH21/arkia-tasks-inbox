@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Aprobar factura proveedor",
+        "process": "Facturación",
+        "assignedTo": "Juan Pérez",
+        "priority": "Alta",
+        "status": "Pendiente",
+        "createdAt": "2026-06-01",
+        "description": "Validar la factura enviada por el proveedor, confirmar montos y aprobar el pago correspondiente."
+    },
+    {
+        "id": 2,
+        "title": "Revisar contrato",
+        "process": "Jurídico",
+        "assignedTo": "Laura Gómez",
+        "priority": "Alta",
+        "status": "Pendiente",
+        "createdAt": "03/06/2026",
+        "description": "Revisar los contrato del nuevo proveedor."
+    },
+    {
+        "id": 3,
+        "title": "Aprobar factura proveedor",
+        "process": "Facturación",
+        "assignedTo": "Juan Pérez",
+        "priority": "Alta",
+        "status": "Pendiente",
+        "createdAt": "2026-06-01",
+        "description": "Validar la factura enviada por el proveedor, confirmar montos y aprobar el pago correspondiente."
+    },
+    {
+        "id": 4,
+        "title": "Revisar contrato",
+        "process": "Jurídico",
+        "assignedTo": "Laura Gómez",
+        "priority": "Alta",
+        "status": "Pendiente",
+        "createdAt": "03/06/2026",
+        "description": "Revisar los contrato del nuevo proveedor."
+    },
+    {
+        "id": 5,
+        "title":"Aprobar factura proveedor",
+        "process":"Facturación",
+        "assignedTo":"Juan Pérez",
+        "priority":"Alta",
+        "status":"Pendiente",
+        "createdAt": "2026-06-01",
+        "description": "Validar la factura enviada por el proveedor, confirmar montos y aprobar el pago correspondiente."
+    },
+    {
+        "id": 6,
+        "title":"Revisar contrato",
+        "process":"Jurídico",
+        "assignedTo":"Laura Gómez",
+        "priority":"Alta",
+        "status":"Pendiente",
+        "createdAt": "03/06/2026",
+        "description": "Revisar los contrato del nuevo proveedor."
+    },
+    {
+        "id": 7,
+        "title":"Aprobar factura proveedor",
+        "process":"Facturación",
+        "assignedTo":"Juan Pérez",
+        "priority":"Alta",
+        "status":"Pendiente",
+        "createdAt": "2026-06-01",
+        "description": "Validar la factura enviada por el proveedor, confirmar montos y aprobar el pago correspondiente."
+    },
+    {
+        "id": 8,
+        "title":"Revisar contrato",
+        "process":"Jurídico",
+        "assignedTo":"Laura Gómez",
+        "priority":"Alta",
+        "status":"Pendiente",
+        "createdAt": "03/06/2026",
+        "description": "Revisar los contrato del nuevo proveedor."
+    }
+]

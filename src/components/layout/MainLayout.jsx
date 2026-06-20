@@ -1,7 +1,7 @@
 import FilterPanel from "../filters/FiltersPanel"
 import TaskList from "../tasks/TasksList"
 
-function MainLayout() {
+function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
     return (
         <section
             className="
@@ -13,7 +13,7 @@ function MainLayout() {
             "
         >
             
-            <FilterPanel />
+            <FilterPanel filters={filters} filtersValue={filtersValue} filte setFiltersValue={setFiltersValue} />
             <h2 className="
                 text-xl
                 font-semibold
@@ -23,7 +23,7 @@ function MainLayout() {
             >
             Bandeja de tareas
             </h2>
-            <TaskList />
+            <TaskList tasks={tasks} />
 
             <div
                 className="

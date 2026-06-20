@@ -1,23 +1,28 @@
-function FilterPanel() {
+import FilterItem from "./FilterItem"
+
+function FilterPanel({ filters, filtersValue, setFiltersValue }) {
+
+
+
     return (
         <aside
-                className="
+            className="
                     bg-white
                     rounded-xl
                     shadow-sm
                     p-5
                     xl:order-3
                 "
-            >
-                <h3
-                    className="
+        >
+            <h3
+                className="
                     font-semibold
                     text-lg
                     mb-4
                 "
-                >
-                    Filtros
-                </h3>
+            >
+                Filtros
+            </h3>
             <div
                 className="
                     pace-y-4
@@ -25,7 +30,29 @@ function FilterPanel() {
                     h-[220px]
                 "
             >
-                    <div className="">
+                {
+                    filters.map(filter => (
+
+                        <FilterItem
+                            key={filter.field}
+                            filter={filter}
+                            value={filtersValue[filter.field] || ""}
+                            onChange={(value) => {
+                                setFiltersValue(prev => ({
+                                    ...prev,
+                                    [filter.field]: value
+                                }));
+
+                            }}
+                        />
+
+                    ))
+                }
+                {/* {filters.map(filter => (
+                    <FilterItem key={filter.field} filter={filter} filtersValue={filtersValue} setFiltersValue={setFiltersValue} />
+                    
+                ))} */}
+                {/* <div>
                         <label
                             className="
                             block
@@ -50,7 +77,6 @@ function FilterPanel() {
                             <option>En progreso</option>
                             <option>Completada</option>
                         </select>
-
                     </div>
                     <div>
                         <label
@@ -137,11 +163,11 @@ function FilterPanel() {
                             <option>Baja</option>
                         </select>
 
-                    </div>
+                    </div> */}
 
-                </div>
+            </div>
 
-            </aside>
+        </aside>
     )
 }
 

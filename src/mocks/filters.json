@@ -1,7 +1,17 @@
 [
   {
+    "field": "createdAt",
+    "label": "Fecha",
+    "type": "select",
+    "options": [
+      "Mas reciente",
+      "Mas antiguo"
+    ]
+  },
+  {
     "field": "status",
     "label": "Estado",
+    "type": "select",
     "options": [
       "Pendiente",
       "En progreso",
@@ -11,6 +21,7 @@
   {
     "field": "priority",
     "label": "Prioridad",
+    "type": "select",
     "options": [
       "Alta",
       "Media",

@@ -1,11 +1,8 @@
 import { useState } from "react"
 import TaskCard from "./TaskCard"
 import TaskDetailModal from "./TaskDetailModal"
-import { useTasks } from "../../hooks/useTasks"
 
-function TaskList() {
-    const { tasks } = useTasks()
-
+function TaskList({ tasks }) {
     const [taskSelected, setTaskSelected] = useState(null)
 
     return (

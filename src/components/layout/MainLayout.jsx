@@ -1,7 +1,7 @@
 import FilterPanel from "../filters/FiltersPanel"
 import TaskList from "../tasks/TasksList"
 
-function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
+function MainLayout({ filters, tasks, filtersValue, setFiltersValue, loading}) {
     return (
         <section
             className="
@@ -12,8 +12,11 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
                 gap-6
             "
         >
-            
-            <FilterPanel filters={filters} filtersValue={filtersValue} filte setFiltersValue={setFiltersValue} />
+            <FilterPanel
+                filters={filters}
+                filtersValue={filtersValue}
+                filte setFiltersValue={setFiltersValue}
+                tasks={tasks} />
             <h2 className="
                 text-xl
                 font-semibold
@@ -23,8 +26,7 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
             >
             Bandeja de tareas
             </h2>
-            <TaskList tasks={tasks} />
-
+            <TaskList tasks={tasks} loading={loading} />
             <div
                 className="
                 bg-white
@@ -36,7 +38,6 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
                 xl:order-4
             "
             >
-
                 <h3
                     className="
                     font-semibold
@@ -46,7 +47,6 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
                 >
                     🤖 Smart Insights
                 </h3>
-
                 <p
                     className="
                     text-sm
@@ -56,7 +56,6 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
                 >
                     Consulta información sobre la bandeja.
                 </p>
-
                 <textarea
                     placeholder="Ej: ¿Cuántas tareas de prioridad alta siguen pendientes?"
                     className="
@@ -67,7 +66,6 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
                     min-h-[120px]
                 "
                 ></textarea>
-
                 <button
                     className="
                     mt-3
@@ -80,7 +78,6 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
                 >
                     Generar análisis
                 </button>
-
                 {/* <div
                     className="
                     mt-4
@@ -94,9 +91,7 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue }) {
                     Actualmente existen 35 tareas pendientes.
                     El proceso de Facturación concentra la mayor carga operativa.
                 </div> */}
-
             </div>
-
         </section>
     )
 }

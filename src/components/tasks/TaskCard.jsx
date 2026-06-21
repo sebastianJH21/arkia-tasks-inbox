@@ -9,6 +9,7 @@ function TaskCard({ task, setTaskSelected }) {
                 border
                 border-slate-200
                 p-5
+                mr-2
                 hover:shadow-md
                 transition
                 cursor-pointer
@@ -32,14 +33,19 @@ function TaskCard({ task, setTaskSelected }) {
                 </h3>
 
                 <span
-                    className="
-                        bg-red-100
-                        text-red-600
+                    className={`
                         px-3
                         py-1
                         rounded-full
-                        text-xs
-                    "
+                        text-s
+                        ${
+                            task.priority === "Alta" 
+                            ? 'bg-red-100 text-red-600'
+                            : task.priority === "Media"
+                            ? 'bg-amber-100 text-amber-600'
+                            : 'bg-blue-100 text-blue-600'
+                        }
+                    `}
                 >
                     {task.priority}
                 </span>

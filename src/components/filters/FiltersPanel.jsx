@@ -1,9 +1,6 @@
 import FilterItem from "./FilterItem"
 
-function FilterPanel({ filters, filtersValue, setFiltersValue }) {
-
-
-
+function FilterPanel({ filters, filtersValue, setFiltersValue, tasks }) {
     return (
         <aside
             className="
@@ -18,7 +15,7 @@ function FilterPanel({ filters, filtersValue, setFiltersValue }) {
                 className="
                     font-semibold
                     text-lg
-                    mb-4
+                    mb-1
                 "
             >
                 Filtros
@@ -32,10 +29,10 @@ function FilterPanel({ filters, filtersValue, setFiltersValue }) {
             >
                 {
                     filters.map(filter => (
-
                         <FilterItem
                             key={filter.field}
                             filter={filter}
+                            tasks={tasks}
                             value={filtersValue[filter.field] || ""}
                             onChange={(value) => {
                                 setFiltersValue(prev => ({
@@ -45,128 +42,9 @@ function FilterPanel({ filters, filtersValue, setFiltersValue }) {
 
                             }}
                         />
-
                     ))
                 }
-                {/* {filters.map(filter => (
-                    <FilterItem key={filter.field} filter={filter} filtersValue={filtersValue} setFiltersValue={setFiltersValue} />
-                    
-                ))} */}
-                {/* <div>
-                        <label
-                            className="
-                            block
-                            text-sm
-                            font-medium
-                            mb-2
-                        "
-                        >
-                            Estado
-                        </label>
-                        <select
-                            className="
-                            w-full
-                            border
-                            rounded-lg
-                            px-3
-                            py-2
-                        "
-                        >
-                            <option>Todos</option>
-                            <option>Pendiente</option>
-                            <option>En progreso</option>
-                            <option>Completada</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label
-                            className="
-                            block
-                            text-sm
-                            font-medium
-                            mb-2
-                        "
-                        >
-                            Estado
-                        </label>
-                        <select
-                            className="
-                            w-full
-                            border
-                            rounded-lg
-                            px-3
-                            py-2
-                        "
-                        >
-                            <option>Todos</option>
-                            <option>Pendiente</option>
-                            <option>En progreso</option>
-                            <option>Completada</option>
-                        </select>
-
-                    </div>
-
-                    <div>
-
-                        <label
-                            className="
-                            block
-                            text-sm
-                            font-medium
-                            mb-2
-                        "
-                        >
-                            Prioridad
-                        </label>
-
-                        <select
-                            className="
-                            w-full
-                            border
-                            rounded-lg
-                            px-3
-                            py-2
-                        "
-                        >
-                            <option>Todas</option>
-                            <option>Alta</option>
-                            <option>Media</option>
-                            <option>Baja</option>
-                        </select>
-
-                    </div>
-                    <div>
-
-                        <label
-                            className="
-                            block
-                            text-sm
-                            font-medium
-                            mb-2
-                        "
-                        >
-                            Prioridad
-                        </label>
-
-                        <select
-                            className="
-                            w-full
-                            border
-                            rounded-lg
-                            px-3
-                            py-2
-                        "
-                        >
-                            <option>Todas</option>
-                            <option>Alta</option>
-                            <option>Media</option>
-                            <option>Baja</option>
-                        </select>
-
-                    </div> */}
-
             </div>
-
         </aside>
     )
 }

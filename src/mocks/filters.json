@@ -4,8 +4,8 @@
     "label": "Fecha",
     "type": "select",
     "options": [
-      "Mas reciente",
-      "Mas antiguo"
+      "Más reciente",
+      "Más antiguo"
     ]
   },
   {
@@ -27,5 +27,25 @@
       "Media",
       "Baja"
     ]
+  },
+  {
+    "field": "title",
+    "label": "Titulo",
+    "type": "text"
+  },
+  {
+    "field": "process",
+    "label": "Proceso",
+    "type": "select"
+  },
+  {
+    "field": "assignedTo",
+    "label": "Responsable",
+    "type": "select"
+  },
+  {
+    "field": "description",
+    "label": "Descripción",
+    "type": "text"
   }
 ]

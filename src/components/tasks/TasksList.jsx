@@ -1,13 +1,23 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import TaskCard from "./TaskCard"
 import TaskDetailModal from "./TaskDetailModal"
+import TaskLoading from "./TasksLoading"
 
-function TaskList({ tasks }) {
+function TaskList({ tasks, loading }) {
     const [taskSelected, setTaskSelected] = useState(null)
+    useEffect(() => {
+        const hadleKeyEscape = (event) => {
+            if (event.key === "Escape") {
+                setTaskSelected(null)
+            }
+        }
+
+        window.addEventListener("keydown", hadleKeyEscape)
+    }, [])
 
     return (
         <>
-        <section
+            <section
                 className="
                     xl:order-2
                     xl:row-span-2
@@ -15,23 +25,26 @@ function TaskList({ tasks }) {
             >
                 <div
                     className="
-                        grid
-                        md:grid-cols-2
+                        flex
+                        flex-col
                         gap-5
                         overflow-y-auto
-                        h-[650px]
+                        max-h-[650px]
                     "
-                >   
-                    {tasks.map(task => (
-                        <TaskCard key={ task.id } task={task} setTaskSelected={setTaskSelected} />
-                    ))}
-
-
-
+                >
+                    {loading ? (
+                        <TaskLoading loading={loading} />
+                    ) : (
+                        tasks.length !== 0 ? (
+                            tasks.map(task => (
+                                <TaskCard key={task.id} task={task} setTaskSelected={setTaskSelected} />
+                            ))
+                        ) : (
+                            <TaskLoading loading={loading} />
+                        ))}
                 </div>
-
             </section>
-            <TaskDetailModal taskSelected={ taskSelected } setTaskSelected={ setTaskSelected } />
+            <TaskDetailModal taskSelected={taskSelected} setTaskSelected={setTaskSelected} />
         </>
     )
 }

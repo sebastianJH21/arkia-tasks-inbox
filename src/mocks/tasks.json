@@ -1,82 +1,202 @@
 [
-    {
-        "id": 1,
-        "title": "Aprobar factura proveedor",
-        "process": "Facturación",
-        "assignedTo": "Juan Pérez",
-        "priority": "Alta",
-        "status": "Pendiente",
-        "createdAt": "2026-06-01",
-        "description": "Validar la factura enviada por el proveedor, confirmar montos y aprobar el pago correspondiente."
-    },
-    {
-        "id": 2,
-        "title": "Revisar contrato",
-        "process": "Jurídico",
-        "assignedTo": "Laura Gómez",
-        "priority": "Alta",
-        "status": "Pendiente",
-        "createdAt": "03/06/2026",
-        "description": "Revisar los contrato del nuevo proveedor."
-    },
-    {
-        "id": 3,
-        "title": "Aprobar factura proveedor",
-        "process": "Facturación",
-        "assignedTo": "Juan Pérez",
-        "priority": "Alta",
-        "status": "Pendiente",
-        "createdAt": "2026-06-01",
-        "description": "Validar la factura enviada por el proveedor, confirmar montos y aprobar el pago correspondiente."
-    },
-    {
-        "id": 4,
-        "title": "Revisar contrato",
-        "process": "Jurídico",
-        "assignedTo": "Laura Gómez",
-        "priority": "Alta",
-        "status": "Pendiente",
-        "createdAt": "03/06/2026",
-        "description": "Revisar los contrato del nuevo proveedor."
-    },
-    {
-        "id": 5,
-        "title":"Aprobar factura proveedor",
-        "process":"Facturación",
-        "assignedTo":"Juan Pérez",
-        "priority":"Alta",
-        "status":"Pendiente",
-        "createdAt": "2026-06-01",
-        "description": "Validar la factura enviada por el proveedor, confirmar montos y aprobar el pago correspondiente."
-    },
-    {
-        "id": 6,
-        "title":"Revisar contrato",
-        "process":"Jurídico",
-        "assignedTo":"Laura Gómez",
-        "priority":"Alta",
-        "status":"Pendiente",
-        "createdAt": "03/06/2026",
-        "description": "Revisar los contrato del nuevo proveedor."
-    },
-    {
-        "id": 7,
-        "title":"Aprobar factura proveedor",
-        "process":"Facturación",
-        "assignedTo":"Juan Pérez",
-        "priority":"Alta",
-        "status":"Pendiente",
-        "createdAt": "2026-06-01",
-        "description": "Validar la factura enviada por el proveedor, confirmar montos y aprobar el pago correspondiente."
-    },
-    {
-        "id": 8,
-        "title":"Revisar contrato",
-        "process":"Jurídico",
-        "assignedTo":"Laura Gómez",
-        "priority":"Alta",
-        "status":"Pendiente",
-        "createdAt": "03/06/2026",
-        "description": "Revisar los contrato del nuevo proveedor."
-    }
+  {
+    "id": 1,
+    "title": "Aprobar factura proveedor",
+    "process": "Facturación",
+    "assignedTo": "Juan Pérez",
+    "priority": "Alta",
+    "status": "Pendiente",
+    "createdAt": "2026-06-01",
+    "description": "Validar la factura enviada por el proveedor."
+  },
+  {
+    "id": 2,
+    "title": "Revisar contrato",
+    "process": "Jurídico",
+    "assignedTo": "Laura Gómez",
+    "priority": "Alta",
+    "status": "En progreso",
+    "createdAt": "2026-06-02",
+    "description": "Revisar el contrato del nuevo proveedor."
+  },
+  {
+    "id": 3,
+    "title": "Actualizar inventario",
+    "process": "Logística",
+    "assignedTo": "Carlos Ramírez",
+    "priority": "Media",
+    "status": "Completada",
+    "createdAt": "2026-06-03",
+    "description": "Actualizar el inventario general del almacén."
+  },
+  {
+    "id": 4,
+    "title": "Programar capacitación",
+    "process": "Talento Humano",
+    "assignedTo": "Ana Torres",
+    "priority": "Baja",
+    "status": "Pendiente",
+    "createdAt": "2026-06-04",
+    "description": "Organizar capacitación sobre seguridad laboral."
+  },
+  {
+    "id": 5,
+    "title": "Crear reporte mensual",
+    "process": "Finanzas",
+    "assignedTo": "Miguel Díaz",
+    "priority": "Alta",
+    "status": "Completada",
+    "createdAt": "2026-06-05",
+    "description": "Generar el reporte financiero mensual."
+  },
+  {
+    "id": 6,
+    "title": "Auditar permisos",
+    "process": "Tecnología",
+    "assignedTo": "Sofía Herrera",
+    "priority": "Media",
+    "status": "En progreso",
+    "createdAt": "2026-06-06",
+    "description": "Verificar permisos de acceso de usuarios."
+  },
+  {
+    "id": 7,
+    "title": "Gestionar reclamo cliente",
+    "process": "Servicio al Cliente",
+    "assignedTo": "Pedro López",
+    "priority": "Alta",
+    "status": "Pendiente",
+    "createdAt": "2026-06-07",
+    "description": "Atender reclamo relacionado con un pedido."
+  },
+  {
+    "id": 8,
+    "title": "Actualizar sitio web",
+    "process": "Marketing",
+    "assignedTo": "María Ruiz",
+    "priority": "Media",
+    "status": "Completada",
+    "createdAt": "2026-06-08",
+    "description": "Publicar nuevas promociones en la web."
+  },
+  {
+    "id": 9,
+    "title": "Validar nómina",
+    "process": "Talento Humano",
+    "assignedTo": "Jorge Castro",
+    "priority": "Alta",
+    "status": "En progreso",
+    "createdAt": "2026-06-09",
+    "description": "Verificar novedades antes del pago."
+  },
+  {
+    "id": 10,
+    "title": "Optimizar base de datos",
+    "process": "Tecnología",
+    "assignedTo": "Andrés Mejía",
+    "priority": "Alta",
+    "status": "Pendiente",
+    "createdAt": "2026-06-10",
+    "description": "Optimizar consultas de alto consumo."
+  },
+  {
+    "id": 11,
+    "title": "Revisar indicadores",
+    "process": "Planeación",
+    "assignedTo": "Camila Vélez",
+    "priority": "Media",
+    "status": "Completada",
+    "createdAt": "2026-06-11",
+    "description": "Analizar indicadores del trimestre."
+  },
+  {
+    "id": 12,
+    "title": "Preparar presentación",
+    "process": "Gerencia",
+    "assignedTo": "Natalia Rojas",
+    "priority": "Alta",
+    "status": "En progreso",
+    "createdAt": "2026-06-12",
+    "description": "Preparar presentación para junta directiva."
+  },
+  {
+    "id": 13,
+    "title": "Actualizar manual",
+    "process": "Calidad",
+    "assignedTo": "Ricardo León",
+    "priority": "Baja",
+    "status": "Pendiente",
+    "createdAt": "2026-06-13",
+    "description": "Actualizar manual de procedimientos."
+  },
+  {
+    "id": 14,
+    "title": "Gestionar compra equipos",
+    "process": "Compras",
+    "assignedTo": "Daniela Gil",
+    "priority": "Media",
+    "status": "Completada",
+    "createdAt": "2026-06-14",
+    "description": "Comprar equipos para nuevos empleados."
+  },
+  {
+    "id": 15,
+    "title": "Evaluar proveedores",
+    "process": "Compras",
+    "assignedTo": "Felipe Montoya",
+    "priority": "Alta",
+    "status": "Pendiente",
+    "createdAt": "2026-06-15",
+    "description": "Evaluar desempeño de proveedores actuales."
+  },
+  {
+    "id": 16,
+    "title": "Revisar incidentes",
+    "process": "Seguridad",
+    "assignedTo": "Paula Restrepo",
+    "priority": "Alta",
+    "status": "En progreso",
+    "createdAt": "2026-06-16",
+    "description": "Analizar incidentes reportados esta semana."
+  },
+  {
+    "id": 17,
+    "title": "Actualizar licencias",
+    "process": "Tecnología",
+    "assignedTo": "Sebastián Mora",
+    "priority": "Media",
+    "status": "Completada",
+    "createdAt": "2026-06-17",
+    "description": "Renovar licencias de software."
+  },
+  {
+    "id": 18,
+    "title": "Realizar encuesta interna",
+    "process": "Talento Humano",
+    "assignedTo": "Sandra Quintero",
+    "priority": "Baja",
+    "status": "Pendiente",
+    "createdAt": "2026-06-18",
+    "description": "Aplicar encuesta de clima organizacional."
+  },
+  {
+    "id": 19,
+    "title": "Documentar API",
+    "process": "Tecnología",
+    "assignedTo": "David Arango",
+    "priority": "Media",
+    "status": "En progreso",
+    "createdAt": "2026-06-19",
+    "description": "Documentar endpoints para el equipo frontend."
+  },
+  {
+    "id": 20,
+    "title": "Cerrar proyecto piloto",
+    "process": "Innovación",
+    "assignedTo": "Valentina Soto",
+    "priority": "Alta",
+    "status": "Completada",
+    "createdAt": "2026-06-20",
+    "description": "Realizar cierre y lecciones aprendidas."
+  }
 ]

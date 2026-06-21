@@ -1,7 +1,7 @@
 function KpiCard({ title, value, color = "" }) {
     return (
         <div className="bg-white rounded-xl shadow-sm p-5">
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-slate-500 font-semibold">
                 { title }
             </p>
             <h2

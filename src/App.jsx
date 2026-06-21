@@ -45,9 +45,8 @@ function App() {
   }
 
   const applySort = (tasks, filtersValue) => {
-    if (!filtersValue.createdAt) return tasks
 
-    if (filtersValue.createdAt === "Más reciente") {
+    if (filtersValue.createdAt === "Más reciente" || !filtersValue.createdAt) {
       return tasks.sort((a, b) => (
         new Date(b.createdAt) - new Date(a.createdAt)
       ))

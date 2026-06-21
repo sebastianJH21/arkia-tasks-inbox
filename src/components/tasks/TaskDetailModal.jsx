@@ -55,7 +55,12 @@ function TaskDetailModal({ taskSelected, setTaskSelected }) {
                             "
                         >
                             <div>
-                                <p className="text-sm text-slate-500">
+                                <p
+                                    className="
+                                        text-sm
+                                        text-slate-500
+                                    "
+                                >
                                     Proceso
                                 </p>
                                 <p className="font-medium">
@@ -63,7 +68,12 @@ function TaskDetailModal({ taskSelected, setTaskSelected }) {
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm text-slate-500">
+                                <p
+                                    className="
+                                        text-sm
+                                        text-slate-500
+                                    "
+                                >
                                     Responsable
                                 </p>
                                 <p className="font-medium">
@@ -71,7 +81,12 @@ function TaskDetailModal({ taskSelected, setTaskSelected }) {
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm text-slate-500">
+                                <p
+                                    className="
+                                        text-sm
+                                        text-slate-500
+                                    "
+                                >
                                     Prioridad
                                 </p>
                                 <p className="font-medium">
@@ -79,7 +94,12 @@ function TaskDetailModal({ taskSelected, setTaskSelected }) {
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm text-slate-500">
+                                <p
+                                    className="
+                                        text-sm
+                                        text-slate-500
+                                    "
+                                >
                                     Estado
                                 </p>
                                 <p className="font-medium">
@@ -87,7 +107,12 @@ function TaskDetailModal({ taskSelected, setTaskSelected }) {
                                 </p>
                             </div>
                             <div>
-                                <p className="text-sm text-slate-500">
+                                <p
+                                    className="
+                                        text-sm
+                                        text-slate-500
+                                    "
+                                >
                                     Fecha Creación
                                 </p>
                                 <p className="font-medium">

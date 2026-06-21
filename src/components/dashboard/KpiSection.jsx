@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import KpiCard from "./KpiCard";
+
 function KpiSection({ tasks }) {
     const [totalTask, setTotalTasks] = useState(0)
     const [tasksPending, setTasksPending] = useState(0)

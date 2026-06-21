@@ -25,20 +25,20 @@ function TaskLoading({ loading }) {
                 {loading ? (
                 
                     <h3
-                    className="
-                    font-semibold
-                    text-slate-800
-                    animate-pulse
-                    "
+                        className="
+                            font-semibold
+                            text-slate-800
+                            animate-pulse
+                        "
                     >
                     Cargando...
                 </h3>
                 ) : (
                     <h3
                         className="
-                        font-semibold
-                        text-slate-800
-                    "
+                            font-semibold
+                            text-slate-800
+                        "
                     >
                         No se encontraton tareas
                     </h3>
@@ -46,11 +46,11 @@ function TaskLoading({ loading }) {
             </div>
             <div
                 className="
-                mt-4
-                border-t
-                flex
-                justify-end
-            "
+                    mt-4
+                    border-t
+                    flex
+                    justify-end
+                "
             >
             </div>
         </article>

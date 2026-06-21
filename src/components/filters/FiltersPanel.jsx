@@ -4,12 +4,12 @@ function FilterPanel({ filters, filtersValue, setFiltersValue, tasks }) {
     return (
         <aside
             className="
-                    bg-white
-                    rounded-xl
-                    shadow-sm
-                    p-5
-                    xl:order-3
-                "
+                bg-white
+                rounded-xl
+                shadow-sm
+                p-5
+                xl:order-3
+            "
         >
             <h3
                 className="
@@ -39,7 +39,6 @@ function FilterPanel({ filters, filtersValue, setFiltersValue, tasks }) {
                                     ...prev,
                                     [filter.field]: value
                                 }));
-
                             }}
                         />
                     ))

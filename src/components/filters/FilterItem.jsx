@@ -1,4 +1,3 @@
-// import { useFilters } from "../../hooks/useFilters"
 import Select from "react-select";
 import { useMemo } from "react";
 
@@ -22,31 +21,7 @@ function FilterItem({ filter, value, onChange, tasks }) {
     }, [tasks, filter])
 
     const input = () => {
-        switch (filter.type) {
-            // case "select-2":
-            //     return (
-            //         <select
-            //             className="
-            //                 w-full
-            //                 border
-            //                 rounded-lg
-            //                 px-3
-            //                 py-2
-            //                 cursor-pointer
-            //             "
-            //             value={value}
-            //             onChange={(e) => onChange(e.target.value)}
-            //         >
-            //             <option value="" > Seleccionar </option>
-            //             {options(tasks, filter).map(option => (
-            //                 <option
-            //                     key={option}
-            //                     value={option}
-            //                 >{option}</option>
-            //             )) }
-            //         </select>
-            //     )
-                    
+        switch (filter.type) {                    
             case "text":
                 return (
                     <input
@@ -65,9 +40,9 @@ function FilterItem({ filter, value, onChange, tasks }) {
                             focus:ring-1
                             focus:ring-blue-500
                         "
-                            value={value}
-                            onChange={(e) => onChange(e.target.value)}
-                        />
+                        value={value}
+                        onChange={(e) => onChange(e.target.value)}
+                    />
                 )
             
             case "select":
@@ -87,12 +62,12 @@ function FilterItem({ filter, value, onChange, tasks }) {
         <div>
             <label
                 className="
-                block
-                text-sm
-                font-medium
-                mt-2
-                mb-1
-            "
+                    block
+                    text-sm
+                    font-medium
+                    mt-2
+                    mb-1
+                "
             >
                 { filter.label }
             </label>

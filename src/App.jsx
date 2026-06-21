@@ -5,8 +5,8 @@ import Header from './components/layout/Header';
 import KpiSection from './components/dashboard/KpiSection';
 import SearchBar from './components/dashboard/SearchBar';
 import MainLayout from './components/layout/MainLayout';
-import { fetchTasks } from "./hooks/useTasks";
-import { fetchFilters } from "./hooks/useFilters";
+import { fetchTasks } from "./services/taskService";
+import { fetchFilters } from "./services/filtersService";
 import { usePersistedState } from "./hooks/usePersistedState";
 
 
@@ -14,7 +14,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filters, setfilters] = useState([]);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState('');
   const [filtersValue, setFiltersValue] =
     usePersistedState(
       "taskFilters",
@@ -39,22 +39,25 @@ function App() {
   const applySearch = (tasks, search) => {
     if (!search) return tasks
 
-    return tasks.filter(item => (
+    const result = tasks.filter(item => (
         Object.values(item).some(value => String(value).toLowerCase().includes(search.toLowerCase()))
     ))
+    return result;
   }
 
   const applySort = (tasks, filtersValue) => {
 
     if (filtersValue.createdAt === "Más reciente" || !filtersValue.createdAt) {
-      return tasks.sort((a, b) => (
+      const result = tasks.sort((a, b) => (
         new Date(b.createdAt) - new Date(a.createdAt)
       ))
+      return result;
     }
     if (filtersValue.createdAt === "Más antiguo") {
-      return tasks.sort((a, b) => (
+      const result = tasks.sort((a, b) => (
         new Date(a.createdAt) - new Date(b.createdAt)
       ))
+      return result;
     }
   }
   

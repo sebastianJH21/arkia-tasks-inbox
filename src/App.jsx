@@ -28,8 +28,8 @@ function App() {
 
       if (!value) return;
 
-      if (field === "createdAt") return
-        result = result.filter(task => 
+      if (field === "createdAt") return;
+      result = result.filter(task => 
         String(task[field]).toLowerCase().includes(value.toLowerCase())
       );
     });
@@ -37,7 +37,7 @@ function App() {
   }
 
   const applySearch = (tasks, search) => {
-    if (!search) return tasks
+    if (!search) return tasks;
 
     const result = tasks.filter(item => (
         Object.values(item).some(value => String(value).toLowerCase().includes(search.toLowerCase()))

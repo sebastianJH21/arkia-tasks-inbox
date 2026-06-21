@@ -1,16 +1,139 @@
-# React + Vite
+# Arkia Tasks Inbox
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Aplicación desarrollada en React para visualizar y gestionar una bandeja de tareas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+La solución permite consultar tareas, realizar búsquedas dinámicas, aplicar filtros configurables, ordenar resultados por fecha de creación y visualizar el detalle completo de cada tarea.
 
-## React Compiler
+La aplicación consume información desde archivos JSON mockeados y fue diseñada para facilitar futuras integraciones con APIs reales.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Bandeja de tareas
+
+Visualización de tareas mostrando:
+
+* Título
+* Proceso
+* Responsable
+* Prioridad
+* Estado
+* Fecha de creación
+
+### Búsqueda
+
+Permite buscar tareas mediante texto libre.
+
+La búsqueda se realiza en tiempo real sobre los campos relevantes de cada tarea.
+
+### Filtros dinámicos
+
+Los filtros se generan a partir de una configuración externa almacenada en un archivo JSON.
+
+Esto permite agregar nuevos filtros sin modificar la lógica principal de la aplicación.
+
+### Ordenamiento
+
+Permite ordenar las tareas por fecha de creación:
+
+* Más reciente
+* Más antiguo
+
+### Detalle de tarea
+
+Cada tarea puede visualizarse en un modal con información ampliada.
+
+### Persistencia
+
+Los filtros seleccionados se almacenan en localStorage y se recuperan automáticamente al recargar la aplicación.
+
+---
+
+## Tecnologías utilizadas
+
+* React
+* JavaScript
+* Vite
+* Tailwind CSS
+
+---
+
+## Arquitectura
+
+La solución se encuentra organizada por responsabilidades:
+
+src/
+
+* components/
+
+  * dashboard/
+  * filters/
+  * insights/
+  * layout/
+  * tasks/
+
+* hooks/
+
+  * usePersistedState.js
+
+* services/
+
+  * taskService.js
+  * filterService.js
+
+* mocks/
+
+  * tasks.json
+  * filters.json
+
+Esta estructura busca mantener desacopladas la interfaz, la lógica de negocio y el acceso a datos.
+
+---
+
+## Instalación
+
+Clonar repositorio:
+
+git clone https://github.com/sebastianJH21/arkia-tasks-inbox.git
+
+Instalar dependencias:
+
+npm install
+
+Ejecutar proyecto:
+
+npm run dev
+
+Generar build si es necesario:
+
+npm run build
+
+---
+
+## Decisiones técnicas
+
+### Filtros dinámicos
+
+Los filtros se construyen a partir de una configuración JSON para facilitar la escalabilidad y reducir cambios futuros en la interfaz.
+
+### Persistencia
+
+Se utilizó localStorage para conservar la selección de filtros entre recargas de página.
+
+### Cálculo de resultados
+
+Se utilizó useMemo para evitar cálculos innecesarios durante búsquedas, filtrados y ordenamientos.
+
+---
+
+## Mejoras futuras
+
+* Integración con backend real.
+* Paginación o virtualización para grandes volúmenes de datos.
+* Testing automatizado.
+* Exportación de reportes.
+* Integración con IA para análisis de tareas.
+* Gestión completa de tareas (crear, editar, completar y eliminar).

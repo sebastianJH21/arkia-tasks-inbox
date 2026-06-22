@@ -31,9 +31,7 @@ La búsqueda se realiza en tiempo real sobre los campos relevantes de cada tarea
 
 ### Filtros dinámicos
 
-Los filtros se generan a partir de una configuración externa almacenada en un archivo JSON.
-
-Esto permite agregar nuevos filtros sin modificar la lógica principal de la aplicación.
+Los filtros se generan a partir de una configuración externa almacenada en un archivo JSON. Esto permite agregar nuevos filtros sin modificar la lógica principal de la aplicación.
 
 ### Ordenamiento
 
@@ -50,6 +48,21 @@ Cada tarea puede visualizarse en un modal con información ampliada.
 
 Los filtros seleccionados se almacenan en localStorage y se recuperan automáticamente al recargar la aplicación.
 
+### Smart Insights (IA)
+
+Se incorporó una funcionalidad adicional basada en Gemini que permite consultar información de la bandeja mediante lenguaje natural.
+
+La IA recibe como contexto el conjunto de tareas cargadas en la aplicación y responde preguntas relacionadas con:
+
+* Cantidad de tareas pendientes.
+* Responsables de tareas.
+* Distribución por estado.
+* Prioridades.
+* Resúmenes generales de la bandeja.
+* Análisis básicos de productividad.
+
+La IA trabaja exclusivamente con la información suministrada por la aplicación.
+
 ---
 
 ## Tecnologías utilizadas
@@ -58,6 +71,7 @@ Los filtros seleccionados se almacenan en localStorage y se recuperan automátic
 * JavaScript
 * Vite
 * Tailwind CSS
+* Google Gemini API
 
 ---
 
@@ -68,7 +82,6 @@ La solución se encuentra organizada por responsabilidades:
 src/
 
 * components/
-
   * dashboard/
   * filters/
   * insights/
@@ -76,16 +89,14 @@ src/
   * tasks/
 
 * hooks/
-
   * usePersistedState.js
 
 * services/
-
   * taskService.js
   * filterService.js
+  * geminiService.js
 
 * mocks/
-
   * tasks.json
   * filters.json
 
@@ -95,37 +106,45 @@ Esta estructura busca mantener desacopladas la interfaz, la lógica de negocio y
 
 ## Instalación
 
-Clonar repositorio:
+1. Clonar repositorio:
 
-git clone https://github.com/sebastianJH21/arkia-tasks-inbox.git
+  git clone https://github.com/sebastianJH21/arkia-tasks-inbox.git
 
-Instalar dependencias:
+2. Ingresar al proyecto:
 
-npm install
+  cd arkia-tasks-inbox
 
-Ejecutar proyecto:
+  Crear el archivo .env a partir de .env.example:
 
-npm run dev
+  cp .env.example .env
 
-Generar build si es necesario:
+3. Instalar dependencias:
 
-npm run build
+  npm install
+
+4. Ejecutar proyecto:
+
+  npm run dev
+
+5. Generar build si es necesario:
+
+  npm run build
 
 ---
 
 ## Decisiones técnicas
 
-### Filtros dinámicos
+### Diseño centrado en la gestión de tareas
 
-Los filtros se construyen a partir de una configuración JSON para facilitar la escalabilidad y reducir cambios futuros en la interfaz.
+La interfaz prioriza la visualización y gestión de tareas, ubicando filtros y herramientas complementarias en un panel secundario.
 
-### Persistencia
+### Smart Insights con IA
 
-Se utilizó localStorage para conservar la selección de filtros entre recargas de página.
+Se integró Gemini para permitir consultas en lenguaje natural y facilitar el análisis de la información de la bandeja.
 
-### Cálculo de resultados
+### Arquitectura preparada para crecimiento
 
-Se utilizó useMemo para evitar cálculos innecesarios durante búsquedas, filtrados y ordenamientos.
+La aplicación se organizó por responsabilidades para facilitar el mantenimiento y futuras integraciones.
 
 ---
 
@@ -135,5 +154,7 @@ Se utilizó useMemo para evitar cálculos innecesarios durante búsquedas, filtr
 * Paginación o virtualización para grandes volúmenes de datos.
 * Testing automatizado.
 * Exportación de reportes.
-* Integración con IA para análisis de tareas.
 * Gestión completa de tareas (crear, editar, completar y eliminar).
+* Mejorar Smart Insights mediante generación de reportes ejecutivos.
+* Exportación de resultados generados por IA a Excel.
+* Análisis estadísticos avanzados sobre la bandeja.

@@ -1,6 +1,6 @@
 import FilterItem from "./FilterItem"
 
-function FilterPanel({ filters, filtersValue, setFiltersValue, tasks }) {
+function FilterPanel({ filters, filtersValue, setFiltersValue, resetFilters, tasks }) {
     return (
         <aside
             className="
@@ -44,6 +44,19 @@ function FilterPanel({ filters, filtersValue, setFiltersValue, tasks }) {
                     ))
                 }
             </div>
+            <button
+                className="
+                    mt-3
+                    w-full
+                    text-white
+                    rounded-lg
+                    py-2
+                    bg-blue-600 cursor-pointer hover:bg-blue-700
+                "
+                onClick={resetFilters}
+            >
+                Limpiar Filtros
+            </button>
         </aside>
     )
 }

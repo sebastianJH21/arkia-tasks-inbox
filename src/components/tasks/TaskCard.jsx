@@ -39,15 +39,17 @@ function TaskCard({ task, setTaskSelected }) {
                         rounded-full
                         text-s
                         ${
-                            task.priority === "Alta" 
+                            task.status === "Completada"
+                            ? 'bg-green-100 text-green-600'
+                            : task.priority === "Alta" 
                             ? 'bg-red-100 text-red-600'
                             : task.priority === "Media"
                             ? 'bg-amber-100 text-amber-600'
                             : 'bg-blue-100 text-blue-600'
                         }
                     `}
-                >
-                    {task.priority}
+                >   
+                    {task.status === "Completada" ? task.status : task.priority}
                 </span>
             </div>
 

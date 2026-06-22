@@ -41,7 +41,7 @@ function Header() {
                 </div>
                 <div
                     className="
-                        text-sm
+                        text-md
                         text-slate-500
                     "
                 >

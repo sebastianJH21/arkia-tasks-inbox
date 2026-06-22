@@ -15,20 +15,25 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [filters, setfilters] = useState([]);
   const [search, setSearch] = useState('');
-  const [filtersValue, setFiltersValue] =
+  const [filtersValue, setFiltersValue, resetFilters] =
     usePersistedState(
       "taskFilters",
-      {},
-      setLoading
+      {}
     );
 
   const applyFilters = (tasks, filtersValue) => {
     let result = [...tasks]
-    Object.entries(filtersValue).forEach(([field, value]) => {
 
+    if (!filtersValue.status) {
+      result = result.filter(task => task.status !== "Completada");
+    }
+
+    Object.entries(filtersValue).forEach(([field, value]) => {
+      console.log(field)
       if (!value) return;
 
       if (field === "createdAt") return;
+
       result = result.filter(task => 
         String(task[field]).toLowerCase().includes(value.toLowerCase())
       );
@@ -39,22 +44,24 @@ function App() {
   const applySearch = (tasks, search) => {
     if (!search) return tasks;
 
-    const result = tasks.filter(item => (
+    let result = [...tasks]
+    result = result.filter(item => (
         Object.values(item).some(value => String(value).toLowerCase().includes(search.toLowerCase()))
     ))
     return result;
   }
 
   const applySort = (tasks, filtersValue) => {
+    let result = [...tasks]
 
     if (filtersValue.createdAt === "Más reciente" || !filtersValue.createdAt) {
-      const result = tasks.sort((a, b) => (
+      result = result.sort((a, b) => (
         new Date(b.createdAt) - new Date(a.createdAt)
       ))
       return result;
     }
     if (filtersValue.createdAt === "Más antiguo") {
-      const result = tasks.sort((a, b) => (
+      result = result.sort((a, b) => (
         new Date(a.createdAt) - new Date(b.createdAt)
       ))
       return result;
@@ -96,10 +103,12 @@ function App() {
         <KpiSection tasks={tasks} />
         <SearchBar setSearch={setSearch} />
         <MainLayout
-          tasks={visibleTasks}
+          tasks={tasks}
+          visibleTasks={visibleTasks}
           filters={filters}
           filtersValue={filtersValue}
           setFiltersValue={setFiltersValue}
+          resetFilters={resetFilters}
           loading={loading}
         />
       </main>

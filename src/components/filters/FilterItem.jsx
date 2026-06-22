@@ -53,7 +53,11 @@ function FilterItem({ filter, value, onChange, tasks }) {
                         menuPortalTarget={document.body}
                         options={options}
                         onChange={(selected) => onChange(selected?.value)}
-                        value={options.find(option => option.value === value)}
+                        value={
+                            value
+                            ? options.find(option => option.value === value)
+                            : null
+                        }
                     />
                 )
             }

@@ -20,5 +20,10 @@ export function usePersistedState(key, initialValue) {
 
     }, [key, value]);
 
-    return [value, setValue];
+    const resetFilters = () => {
+        localStorage.removeItem(key);
+        setValue(initialValue);
+    };
+
+    return [value, setValue, resetFilters];
 }

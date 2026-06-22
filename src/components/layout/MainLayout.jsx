@@ -2,7 +2,7 @@ import FilterPanel from "../filters/FiltersPanel"
 import SmartInsights from "../insights/SmartInsights"
 import TaskList from "../tasks/TasksList"
 
-function MainLayout({ filters, tasks, filtersValue, setFiltersValue, loading}) {
+function MainLayout({ filters, tasks, visibleTasks, filtersValue, setFiltersValue, resetFilters, loading}) {
     return (
         <section
             className="
@@ -16,8 +16,9 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue, loading}) {
             <FilterPanel
                 filters={filters}
                 filtersValue={filtersValue}
-                filte setFiltersValue={setFiltersValue}
-                tasks={tasks} />
+                setFiltersValue={setFiltersValue}
+                resetFilters={resetFilters}
+                tasks={visibleTasks} />
             <h2
                 className="
                     text-xl
@@ -28,8 +29,8 @@ function MainLayout({ filters, tasks, filtersValue, setFiltersValue, loading}) {
             >
             Bandeja de tareas
             </h2>
-            <TaskList tasks={tasks} loading={loading} />
-            <SmartInsights />
+            <TaskList tasks={visibleTasks} loading={loading} />
+            <SmartInsights tasks={tasks} />
         </section>
     )
 }

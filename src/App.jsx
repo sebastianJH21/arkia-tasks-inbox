@@ -1,4 +1,3 @@
-import './App.css'
 import { useEffect, useState, useMemo } from 'react';
 import Header from './components/layout/Header';
 import KpiSection from './components/dashboard/KpiSection';
@@ -98,18 +97,48 @@ function App() {
   return (
     <>
       <Header />
-      <main className="max-w-7xl mx-auto p-6">
-        <KpiSection tasks={tasks} />
-        <SearchBar setSearch={setSearch} />
-        <MainLayout
-          tasks={tasks}
-          visibleTasks={visibleTasks}
-          filters={filters}
-          filtersValue={filtersValue}
-          setFiltersValue={setFiltersValue}
-          resetFilters={resetFilters}
-          loading={loading}
-        />
+      <main
+        className={`
+          max-w-7xl
+          mx-auto
+          p-6
+          ${ loading
+            ? ' w-full h-screen flex justify-center items-center'
+            : ''
+          }
+        `}
+      >
+        { loading ? (
+          <div
+            class="
+              w-10
+              h-10
+              inline-block
+              box-border
+              animate-spin
+              rounded-[50%]
+              border-white
+              border-b-[#1475fc]
+              border-[5px]
+              border-solid
+            "
+          >
+          </div>
+        ):(
+          <>
+            <KpiSection tasks={tasks} />
+            <SearchBar setSearch={setSearch} />
+            <MainLayout
+              tasks={tasks}
+              visibleTasks={visibleTasks}
+              filters={filters}
+              filtersValue={filtersValue}
+              setFiltersValue={setFiltersValue}
+              resetFilters={resetFilters}
+              loading={loading}
+            />
+          </>
+        )}
       </main>
     </>
   )

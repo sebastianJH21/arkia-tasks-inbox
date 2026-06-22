@@ -117,6 +117,8 @@ Esta estructura busca mantener desacopladas la interfaz, la lógica de negocio y
   Crear el archivo .env a partir de .env.example:
 
   cp .env.example .env
+  
+  Nota: La funcionalidad Smart Insights utiliza claves de prueba de Gemini incluidas en .env.example. Si la clave activa ha alcanzado su límite de uso, puede habilitar una de las claves alternativas disponibles, dejando únicamente una clave activa en el archivo .env.
 
 3. Instalar dependencias:
 

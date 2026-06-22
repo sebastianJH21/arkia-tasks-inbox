@@ -124,7 +124,7 @@ function SmartInsights({ tasks }) {
                         onChange={(e) => setQuestion(e.target.value)}
                         onKeyDown={(e) => {
                             if (e.key === 'Enter') {
-                                e.preventDefault(); // evita el salto de línea
+                                e.preventDefault();
                                 handleAsk();
                             }
                         }}

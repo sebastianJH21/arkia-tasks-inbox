@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import './App.css'
 import { useEffect, useState, useMemo } from 'react';
 import Header from './components/layout/Header';
@@ -29,7 +28,7 @@ function App() {
     }
 
     Object.entries(filtersValue).forEach(([field, value]) => {
-      console.log(field)
+
       if (!value) return;
 
       if (field === "createdAt") return;
